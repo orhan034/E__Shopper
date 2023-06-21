@@ -1,0 +1,475 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* navbar_1*/
+.navbar-bir{
+    background-color: rgb(236, 236, 214);
+    margin: auto;
+    overflow: hidden;
+}
+.tel{
+    display: flex;      
+}
+.tel i{
+    padding-top: 6px;
+    width: 20px;
+}
+.mail{
+    display: flex;
+    justify-content: end;
+    transition: 0.7s;
+}
+.telefon li{
+    transition: 0.7s;
+    list-style-type: none;
+}
+.telefon ul{
+    margin: 0;
+    padding: 0;
+    transition: 0.7s;
+}
+.telefon li a{
+    display: block;
+    padding: 6px;
+    margin: 0 9px;
+    color: rgb(114, 109, 109);
+    text-decoration:none; 
+}
+.fac:hover{
+    background-color: rgb(69, 71, 71);
+}
+.twit:hover{
+    background-color: rgb(44, 155, 77);
+}
+.linke:hover{
+    background-color: rgb(168, 150, 89);
+}
+.goog:hover{
+    background-color: rgb(90, 47, 139);
+}
+
+/* navbar_2 */
+.btn{
+    background-color: aliceblue;
+    color: #333;
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 10px;
+}
+.btn:hover{
+    background-color: #fe980f;
+}
+.dropdowns .dropdown-menue{
+    background-color: white;
+    color: black;
+}
+.dropdowns .dropdown-menue a{
+    transition: 0.6s;
+}
+.dropdowns .dropdown-menue a:hover{
+    background-color: #f08a05;
+    color: white;
+}
+.dropdowns .dropdown-menue a{
+    color: #333;
+}
+.dropdown-menue a:hover{
+    background-color: #fe980f;
+}
+.accound{
+    margin-top: 10px;
+}
+.accound ul{
+    display: flex;
+}
+.accound li{
+    list-style-type: none;
+    display: inline-block;
+}
+.accound li a{
+    text-decoration: none;
+    color: rgb(122, 115, 115);
+    margin-left: 30px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+.accound li a:hover{
+    color: #fe980f;
+}
+.accound i{
+    width: 20px;
+}
+.active{
+    color: #fe980f;
+}
+.hover a{
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.4s;
+}
+.hover a:hover{
+    color: #fe980f;
+}
+
+.resyazi1{
+   margin-top: 100px;
+   margin-left: 80px;
+}
+.resyazi1 h1{
+    color: rgb(109, 105, 105);
+    font-size:3rem ;
+}
+.resyazi1 h1::first-letter{
+    color: #fe980f;
+}
+.resyazi1 h2{
+   color: black;
+   font-size: 35px;
+   font-weight: bold;
+}
+.resyazi1 p{
+    color: #333;
+    font-size: 20px;
+}
+.slaytbtn{
+    padding: 10px 20px;
+    font-size: 23px;
+    border: none;
+    color: white;
+    background-color: #fe980f;
+    transition: 0.5s;
+}
+.slaytbtn:hover{
+    color: black;
+}
+.btnok{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+.btnok span i{
+    color: #8a8887;
+    font-size: 50px;
+    transition: 0.6s;
+}
+.btnok span i:hover{
+    color: #fe980f;
+}
+
+/* navBar_1 */
+@media screen and (max-width:576px){
+    .tel{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+    .mail{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+}
+@media screen and (max-width:333px){
+    .tel{
+        display: block;
+        text-align: center;
+    }
+}
+/* navbar_2 */
+@media screen and (max-width:1200px){
+    .navbar2{
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .a{
+        text-align: center;
+       
+    }
+}
+@media screen and (max-width:576px){
+    .nav-iki{
+        text-align: center;
+        width: 100%;
+    }
+    .b{
+      margin: auto;
+    }
+    .navbar2ul{
+        margin: auto;
+        margin-right: 30px;
+    }
+}
+/* NavBar_3 */
+@media screen and (max-width:768px){
+    .dropdownss{
+        display: block !important;
+    }
+}
+@media screen and (max-width:576px){
+    .formss{
+        display: block;
+        margin: auto;
+        width: 200px;
+    }
+    .c{
+        margin-left: 30px;
+    }
+    .navbar3{
+        display: flex;
+        justify-content: center;
+    }
+}
+/* slayt reponsive */
+@media screen and (max-width:992px){
+    .btnok{
+        display: none;
+    }
+    .resyazi1{
+        margin: 10px;
+        padding: 0;
+    }
+}
+/* contact */
+.contactad h5{
+    text-align: center;
+    color: #f08a05;
+}
+.contactad hr{
+    border: 1px solid #8a8887;
+}
+.contact iframe{
+    width: 100%;
+    opacity: 0.9;
+}
+/* iletişim başlık */
+.iletisim h5{
+    text-align: center;
+    color: #f08a05;
+    font-size: 17px;
+    font-weight: 600;
+}
+.iletisim hr{
+    border: 1px solid #8a8887;
+}
+/* iletişim form */
+.formiletisim input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 5px;
+    outline: none;
+    transition: 0.7s;
+    border-radius: 7px;
+    border: 1px solid rgb(211, 202, 202);
+}
+.formiletisim input:focus{
+    border: 1px solid #f08a05;
+}
+textarea{
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 7px;
+    min-height: 150px;
+    max-height: 150px;
+    outline: none;
+    border: 1px solid rgb(211, 202, 202);
+    padding: 10px;
+    transition: 0.7s;
+}
+textarea:focus{
+    border: 1px solid #f08a05;
+}
+.submit_btn{
+    width: 80px !important;
+    margin-top: 30px;
+    padding: 5px 10px;
+    background-color: #f08a05;
+    color: white; 
+    font-size: 20px;
+    border: navajowhite;
+    transition: 0.6s;
+    font-weight: 600;
+}
+.submit_btn:hover{
+    color: #fe980f;
+    background-color: blue;
+}
+.contactinfo{
+    margin-top: 14px;
+}
+.contactinfo p{
+    margin: 0;
+    margin-left: 20px;
+    color: #8a8887;
+}
+.contact_icon ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.contact_icon li{
+    list-style-type: none;
+}
+.contact_icon li a{
+    font-size: 30px;
+    color: #8a8887;
+    padding: 0px 10px;
+    transition: 0.6s;
+}
+.contact_icon li a:hover{
+    color: #f08a05;
+}
+
+/* Başa dön  */
+.yukaricik{
+    display: none;
+    width: 80px;
+    height: 80px;
+    background-color: #8a8887;
+    color: white;
+    font-weight: 600;   
+    text-decoration: none;
+    transition: 0.5s;
+    border-radius: 50%;
+    line-height: 80px;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+.yukaricik:hover{
+    background-color: #f08a05;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.goster{
+    display: block;
+}
+
+/* footer */
+.footercapsayici{
+    background-color: rgb(236, 236, 214);
+}
+.sira11 h2{
+    color: rgb(85, 83, 82);
+}
+.sira11 h2::first-letter{
+    color: #fe980f;
+}
+.sira11 p{
+    color: rgb(85, 83, 82);
+    line-height: 15px;
+    font-size: 15px;
+}
+.sira12 p{
+    padding: 0;
+    margin: 0;
+}
+.footerliste h5{
+    color: rgb(124, 122, 121);
+}
+.footerliste ul{
+    list-style-type: none;
+    padding: 0;
+}
+.footerliste li{
+    margin-top: 6px;
+}
+.footerliste a{
+    text-decoration: none;
+    color: rgb(85, 83, 82);
+    transition: 0.6s;
+}
+.footerliste a:hover{
+    color: #fe980f;
+}
+.forms{
+    margin-top: 25px;
+}
+.forms{
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    background: rgb(236, 236, 214);
+}
+.forms input{
+    padding: 6px 20px 5px 6px;
+    border: none;
+    outline: none;
+}
+.forms button{
+    border: none;
+    padding: 5px 8px;
+    background-color: #fe980f;
+    color: white;
+    transition: 0.4s;
+}
+.forms button:hover{
+    color: #fe980f;
+    background-color: rgb(29, 14, 233);
+}
+.formparagraf p{
+    margin-top: 20px;
+    width: 86%;
+}
+/* footer son */
+.footerson{
+    background-color: rgb(199, 199, 189);
+    margin: 0;
+    padding: 0;
+}
+.footerson h5{
+   color: rgb(124, 122, 121);
+   padding-top: 13px;
+   font-size: 16px;
+}
+.footerson p{
+    color: rgb(124, 122, 121);
+    padding-top: 10px;
+}
+.designed a{
+    color: #fe980f;
+    transition: 0.2s;
+    padding-top: 10px;
+}
+.designed a:hover{
+    color: #f08a05;
+}
+
+/* footer */
+@media screen and (max-width:1200px){
+    .sira13{
+        display: flex;
+        justify-content: end;
+        margin-bottom: 20px;
+    }
+    .sira12 img{
+        width: 100%;
+        text-align: end;
+    }
+}
+@media screen and (max-width:768px){
+    .sira13 img{
+        width: 100%;
+        height: 200px;
+    }
+}
+/* footer son */
+@media screen and (max-width:768px){
+    .footerson{
+        text-align: center;
+    }
+    .designed{
+       display: block;
+       margin: auto;
+    }
+}

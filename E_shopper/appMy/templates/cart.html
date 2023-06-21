@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+      <!-- kart -->
+      <div class="kart">
+        <div class="container">
+            <div class="kart-baslik">
+                <!-- <ul>
+                    <li><a href="#">Home</a></li>
+                    <li>Shopping Cart</li>
+                </ul> -->
+            </div>
+            <form method="POST" class="cart-icerik mt-5">
+                {% csrf_token %}
+                <table class="kapsayici-table">
+                    <!-- Başlık -->
+                    <thead>
+                        <tr class="cart-navbar">
+                            <td class="item">Ürün</td>
+                            <td class="bosluk"></td>
+                            <td class="price">Fiyat</td>
+                            <td class="quantity" style="padding-left: 70px !important;">ÜrünSayısı</td>
+                            <td class="total">Toplam</td>
+                            <td><input type="submit" class="duzenle" value="Düzenle"></td>
+                        </tr>
+                    </thead>
+                    <!-- Ürünler -->
+                    
+                    {% for i in shopbasket %}   
+                    <tbody>
+                        <tr>
+                            <td class="cart-image">
+                               <a href="{% url 'detay' i.sizeletter.product.slug %}">
+                                <img style="height: 100px; width:100px;" src="{{ i.sizeletter.product.image.url }}" alt="res">
+                               </a>
+                            </td>
+                            <td class="cart-yazi">
+                                <h5>{{ i.sizeletter.product.title }}</h5>
+                                <p class="mb-0">{{ i.sizeletter.size }}</p>
+                                <p class="p-0">{{ i.date_now }}</p>
+                            </td>
+                            <td class="fiyat">
+                                <h4>$ {{ i.sizeletter.price }}</h4>
+                            </td>
+                            <td class="arti-eksi">
+                                <div class="d-flex mb-3" style="max-width: 300px">
+                                    <button type="button" class="btn btn-success px-1 py-0 me-2 eksi"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+
+                                    <div class="form-outline adet mt-2">
+                                        <input id="form{{ i.id }}" min="0" name="count{{ i.id }}" value="{{ i.count }}" type="number"
+                                            class="form-control text-center" />
+                                    </div>
+
+                                    <button type="button" class="btn btn-success px-1 ms-2 eksi"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </td>
+                            <td class="toplamtr">
+                                <p class="toplam">$ {{ i.price_all }}</p>
+                            </td>
+                            <td class="sifirla">
+                                <a href="{% url 'ShopBasketDelete' i.id %}" class="sifirla-boton btn btn-danger ms-4"><i class="fa fa-times"></i></a>
+                            </td>
+                        </tr>
+                       </tbody>  
+                    {% endfor %}
+                        
+                    <!-- <tbody>
+                        <tr>
+                            <td class="cart-image">
+                               <a href="#">
+                                <img src="{% static 'img/kartresim2.png' %}" alt="res">
+                               </a>
+                            </td>
+                            <td class="cart-yazi">
+                                <h5>Colorblock Scuba</h5>
+                                <p>Web ID: 1089772</p>
+                            </td>
+                            <td class="fiyat">
+                                <h4>$59</h4>
+                            </td>
+                            <td class="arti-eksi">
+                                <button class="buton111">+</button>
+                                <span class="adet22">0</span>
+                                <button class="buton11">-</button>
+                            </td>
+                            <td class="toplamtr">
+                                <p class="toplam11">$</p>
+                            </td>
+                            <td class="sifirla">
+                                <button class="sifirla-boton1"><i class="fa fa-times"></i></button>
+                            </td>
+                        </tr>
+                       </tbody>
+                    <tbody>
+                        <tr>
+                            <td class="cart-image">
+                               <a href="#">
+                                <img src="{% static 'img/kartresim3.png' %}" alt="res">
+                               </a>
+                            </td>
+                            <td class="cart-yazi">
+                                <h5>Colorblock Scuba</h5>
+                                <p>Web ID: 1089772</p>
+                            </td>
+                            <td class="fiyat">
+                                <h4>$59</h4>
+                            </td>
+                            <td class="arti-eksi">
+                                <button class="buton1111">+</button>
+                                <span class="adet222">0</span>
+                                <button class="buton_1">-</button>
+                            </td>
+                            <td class="toplamtr">
+                                <p class="toplam111">$</p>
+                            </td>
+                            <td class="sifirla">
+                               <button class="sifirla-boton11"><i class="fa fa-times"></i></button>
+                            </td>
+                        </tr>
+                       </tbody> -->
+                </table>
+               
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Ödeme -->
+    <div class="container mb-4">
+        <div class="odeme-baslik">
+            <h4>What would you like to do next?</h4>
+            <p>
+                Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.
+            </p>
+        </div>
+        <div class="row m-0">
+            <div class="col-md-6 col1-icerikk p-0 mb-3 ">
+                <div class="a me-4">
+                <div class="row">
+                   <div class="col1-icerik">
+                       <ul>
+                        <li>
+                            <input type="checkbox">
+                            <label>Use Coupon Code</label>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <label>Use Gift Voucher</label>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <label>Estimate Shipping & Taxes</label>
+                        </li> 
+                       </ul>
+                     </div>
+                </div>
+                <div class="row ">
+                  <div class="col-4 sel">
+                   <h6 class="country">Country:</h6>
+                   <select>
+                       <option>Türkiye</option>
+                       <option>Azerbaycan</option>
+                       <option>United States</option>
+                       <option>Bangladesh</option>
+                       <option>UK</option>
+                       <option>İndia</option>
+                       <option>Pakistan</option>
+                       <option>Ucrane</option>
+                       <option>Canada</option>
+                   </select>
+                  </div>
+                  <div class="col-4 sel">
+                   <h6 class="country">Region/State:</h6>
+                   <select>
+                       <option>İstanbul</option>
+                       <option>Ankara</option>
+                       <option>Konya</option>
+                       <option>Bursa</option>
+                       <option>Bolu</option>
+                       <option>Amasya</option>
+                       <option>İzmir</option>
+                   </select>
+                  </div>
+                  <div class="col-4 zip-code">
+                   <h6 class="country">Zip Code:</h6>
+                   <input type="text" placeholder="Zip code">
+                  </div>
+                </div>
+                <div class="row">
+                   <div class="col">
+                       <button class="col1-icerik-btn">Get Quates</button>
+                       <button class="col1-icerik-btn">Continue</button>
+                   </div>
+                </div>
+          </div>
+         </div>
+            <div class="col-md-6 col1-icerikk col2_icerik p-0  mb-3">
+               <div class="a ">
+                <ul class="">
+                    <li>Cart Sub Total<span class="card_total1">$ {{ toplam }}</span></li>
+                    <li>Eco Tax<span class="card_total2">$</span></li>
+                    <li>Shipping Cost<span class="card_total">Free</span></li>
+                    <li>Total<span class="card_total3">$ {{ toplam }}</span></li>
+                   </ul>
+                   <button class="col2-icerik-btn">Get Quates</button>
+                   <button class="col2-icerik-btn">Continue</button>
+               </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Başa dön butonu -->
+   <a class="yukaricik" >Başa Dön</a>
+
+   {% endblock body %}

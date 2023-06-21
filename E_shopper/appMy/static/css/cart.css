@@ -1,0 +1,703 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* navbar_1*/
+.navbar-bir{
+    background-color: rgb(236, 236, 214);
+    margin: auto;
+    overflow: hidden;
+}
+.tel{
+    display: flex;   
+}
+.tel i{
+    padding-top: 6px;
+    width: 20px;
+}
+.mail{
+    display: flex;
+    justify-content: end;
+    transition: 0.7s;
+}
+.telefon li{
+    transition: 0.7s;
+    list-style-type: none;
+}
+.telefon ul{
+    margin: 0;
+    padding: 0;
+    transition: 0.7s;
+}
+.telefon li a{
+    display: block;
+    padding: 6px;
+    margin: 0 9px;
+    color: rgb(114, 109, 109);
+    text-decoration:none; 
+}
+.fac:hover{
+    background-color: rgb(69, 71, 71);
+}
+.twit:hover{
+    background-color: rgb(44, 155, 77);
+}
+.linke:hover{
+    background-color: rgb(168, 150, 89);
+}
+.goog:hover{
+    background-color: rgb(90, 47, 139);
+}
+
+/* navbar_2 */
+.btn{
+    background-color: aliceblue;
+    color: #333;
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 10px;
+}
+.btn:hover{
+    background-color: #fe980f;
+}
+.dropdowns .dropdown-menue{
+    background-color: white;
+    color: black;
+}
+.dropdowns .dropdown-menue a{
+    transition: 0.6s;
+}
+.dropdowns .dropdown-menue a:hover{
+    background-color: #f08a05;
+    color: white;
+}
+.dropdowns .dropdown-menue a{
+    color: #333;
+}
+.dropdown-menue a:hover{
+    background-color: #fe980f;
+}
+.accound{
+    margin-top: 10px;
+}
+.accound ul{
+    display: flex;
+}
+.accound li{
+    list-style-type: none;
+    display: inline-block;
+}
+.accound li a{
+    text-decoration: none;
+    color: rgb(122, 115, 115);
+    margin-left: 30px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+.accound li a:hover{
+    color: #fe980f;
+}
+.accound i{
+    width: 20px;
+}
+.active{
+    color: #fe980f;
+}
+.hover a{
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.4s;
+}
+.hover a:hover{
+    color: #fe980f;
+}
+/* NavBar_3 */
+.dropdownss:hover .dropdown-menunav3{ 
+    display: block;
+}
+.navbaruccontainer{
+   overflow: hidden;
+}
+.navbar3{
+    display: flex;
+    list-style-type: none;
+    align-items: center; 
+}
+.navbar3 li{
+    margin-right: 20px;    
+}
+.navbar3 a{
+    text-decoration: none;
+    color: rgb(122, 115, 115);
+    font-size: 20px;
+    transition: 0.5s;
+}
+.navbar3 a:hover{
+    color: #fe980f;
+}
+.aktiv a{
+    color: #fe980f;
+}
+.navbar3 .btn{
+    border: none;
+    background-color: white;
+    color: rgb(122, 115, 115);
+    margin: 0;
+}
+.forms, .formss{
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    background: rgb(236, 236, 214);
+}
+.formss input{
+    display: flex;
+    background: rgb(236, 236, 214);
+    flex: 1;
+    width: 90px;
+    outline: none;
+    border: none;
+}
+form .fa-solid{
+    align-self: center;
+    padding: 5px 10px;
+}
+.dropdown-menu{
+    background-color: rgb(99, 96, 96);
+    border-radius: 0;
+}
+.dropdown-menu a{
+    color: white;
+}
+.dropdown-menu a:hover{
+    background-color: rgb(99, 96, 96);
+}
+.resyazi1{
+   margin-top: 100px;
+   margin-left: 80px;
+}
+.resyazi1 h1{
+    color: rgb(109, 105, 105);
+    font-size:3rem ;
+}
+.resyazi1 h1::first-letter{
+    color: #fe980f;
+}
+.resyazi1 h2{
+   color: black;
+   font-size: 35px;
+   font-weight: bold;
+}
+.resyazi1 p{
+    color: #333;
+    font-size: 20px;
+}
+.slaytbtn{
+    padding: 10px 20px;
+    font-size: 23px;
+    border: none;
+    color: white;
+    background-color: #fe980f;
+    transition: 0.5s;
+}
+.slaytbtn:hover{
+    color: black;
+}
+.btnok{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+.btnok span i{
+    color: #8a8887;
+    font-size: 50px;
+    transition: 0.6s;
+}
+.btnok span i:hover{
+    color: #fe980f;
+}
+
+/* navBar_1 */
+@media screen and (max-width:576px){
+    .tel{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+    .mail{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+}
+@media screen and (max-width:333px){
+    .tel{
+        display: block;
+        text-align: center;
+    }
+}
+/* navbar_2 */
+@media screen and (max-width:1200px){
+    .navbar2{
+        width: 100% !important;
+        text-align: center !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .a{
+        text-align: center !important;
+       
+    }
+}
+@media screen and (max-width:576px){
+    .nav-iki{
+        text-align: center !important;
+        width: 100% !important;
+    }
+    .b{
+      margin: auto !important;
+    }
+    .navbar2ul{
+        margin: auto !important;
+        margin-right: 30px !important;
+    }
+}
+/* NavBar_3 */
+@media screen and (max-width:768px){
+    .dropdownss{
+        display: block !important;
+    }
+}
+@media screen and (max-width:576px){
+    .formssss{
+        display: block !important;
+        margin: auto !important;
+        width: 200px !important;
+    }
+    .c{
+        margin-left: 30px !important;
+    }
+    .navbar3{
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+/* slayt reponsive */
+@media screen and (max-width:992px){
+    .btnok{
+        display: none;
+    }
+    .resyazi1{
+        margin: 10px;
+        padding: 0;
+    }
+}
+
+/* cart */
+.kart-baslik ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-top: 50px;
+}
+.kart-baslik ul li{
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+.kart-baslik ul li a{
+    text-decoration: none;
+    padding: 3px 10px;
+    background-color: #f08a05;
+    color: white;
+    margin-right: 20px;
+}
+.Shopping-Cart{
+    color: #8a8887;
+}
+.cart-icerik{
+    width: 100%;
+    overflow: auto;   
+}
+thead{
+    background-color: #f08a05;   
+}
+.cart-icerik{
+    border: 1px solid #c2bfba;
+    margin-bottom: 50px;  
+}
+table{
+    max-width: 100%;
+}
+.kapsayici-table{
+    width: 100%;
+}
+.cart-navbar td{
+    padding: 10px 15px;
+}
+.cart-navbar{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+.cart-navbar .item{
+    width: 20%;
+}
+.cart-navbar .bosluk{
+    width: 30%;
+}
+.cart-navbar .price{
+    width: 10%;
+}
+.cart-navbar .quantity{
+    width: 20%;
+}
+.cart-navbar .total{
+    width: 10%;
+}
+.cart-yazi h5{
+    margin: 0;
+}
+.fiyat h4{
+    margin-left: 15px;
+}
+tbody{
+    border-bottom: 1px solid rgb(230, 222, 222);
+}
+.buton{
+    padding: 0 6px;
+    font-size: 15px;
+    background-color: #8a8887;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.buton111{
+    padding: 0 6px;
+    font-size: 15px;
+    background-color: #8a8887;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.buton1{
+    padding: 0 8px;
+    font-size: 15px;
+    background-color: #8a8887;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.buton11{
+    padding: 0 8px;
+    font-size: 15px;
+    background-color: #8a8887;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.buton1111{
+    padding: 0 6px;
+    margin-left: 10px;
+    font-size: 15px;
+    background-color: #8a8887;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.buton_1{
+    padding: 0 8px;
+    font-size: 15px;
+    background-color: #8a8887;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.toplamtr p{
+    margin: 0;
+    margin-left: 15px;
+    font-size: 25px;
+    font-weight: 600;
+    color: #474442;
+}
+.sifirla button{
+    margin-left: 10px;
+    padding: 2px 10px;
+    background-color: #8a8887;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    transition: 0.6s;
+    border: none;
+}
+.sifirla button:hover{
+    background-color: #f08a05;
+}
+.adet2{
+   border: 1px solid black;
+   text-align: center;
+   padding: 0 10px;
+}
+.adet22{
+   border: 1px solid black;
+   text-align: center;
+   padding: 0 10px;
+}
+.adet222{
+   border: 1px solid black;
+   text-align: center;
+   padding: 0 10px;
+}
+/* Ödeme */
+.odeme-baslik h4{
+    color: #3a3837;
+}
+.a{
+    text-align: start;
+    border: 1px solid #e2dfde;
+    padding: 30px;
+}
+.cart-icerikk{
+    padding: 0; 
+}
+.col1-icerikk ul{
+    padding: 0;
+}
+.col1-icerikk li{
+    list-style-type: none;
+}
+select{
+    width: 100%;
+    padding: 3px;
+    border: none;
+    background-color: #c2bfba;
+}
+.country{
+    color: #5a5857;
+    width: 100%;
+}
+.zip-code input{
+    width: 100%;
+}
+.col1-icerik-btn{
+    color: white;
+    margin-top: 38px;
+    padding: 5px 10px;
+    border: none;
+    font-size: 17px;
+    font-weight: 500;
+    margin-right: 15px;
+    background-color: #f08a05;
+    transition: 0.6s;
+}
+.col1-icerik-btn:hover{
+    background-color: #8a8887;
+}
+.card_total{
+    display:inline-block;
+}
+.col2_icerik li{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    background-color: #e7e5e2;
+}
+.col2_icerik li {
+    display: flex;
+    justify-content: space-between;
+}
+.col2-icerik-btn{
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    font-size: 17px;
+    font-weight: 500;
+    margin-right: 15px;
+    background-color: #f08a05;
+    transition: 0.6s;
+}
+.col2-icerik-btn:hover{
+    background-color: #8a8887;
+}
+/* Ödeme responsiv */
+@media screen and (max-width:768px){
+    .a{
+        width: 100%;
+        margin: 0;
+    }
+}
+@media screen and (max-width:428px){
+    .sel{
+        width: 100%;
+    }
+    .zip-code{
+        margin-top: 10px;
+        width: 60%;
+    }
+    .col1-icerik-btn{
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:335px){
+    .col2-icerik-btn{
+        margin-bottom: 10px;
+    }
+    .col1-icerik-btn{
+        margin-top: 10px;
+    }
+}
+
+/* footer */
+.footercapsayici{
+    background-color: rgb(236, 236, 214);
+}
+.sira11 h2{
+    color: rgb(85, 83, 82);
+}
+.sira11 h2::first-letter{
+    color: #fe980f;
+}
+.sira11 p{
+    color: rgb(85, 83, 82);
+    line-height: 15px;
+    font-size: 15px;
+}
+.sira12 p{
+    padding: 0;
+    margin: 0;
+}
+.footerliste h5{
+    color: rgb(124, 122, 121);
+}
+.footerliste ul{
+    list-style-type: none;
+    padding: 0;
+}
+.footerliste li{
+    margin-top: 6px;
+}
+.footerliste a{
+    text-decoration: none;
+    color: rgb(85, 83, 82);
+    transition: 0.6s;
+}
+.footerliste a:hover{
+    color: #fe980f;
+}
+.forms{
+    margin-top: 25px;
+}
+.forms{
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    background: rgb(236, 236, 214);
+}
+.forms input{
+    padding: 6px 20px 5px 6px;
+    border: none;
+    outline: none;
+}
+.forms button{
+    border: none;
+    padding: 5px 8px;
+    background-color: #fe980f;
+    color: white;
+    transition: 0.4s;
+}
+.forms button:hover{
+    color: #fe980f;
+    background-color: rgb(29, 14, 233);
+}
+.formparagraf p{
+    margin-top: 20px;
+    width: 86%;
+}
+/* footer son */
+.footerson{
+    background-color: rgb(199, 199, 189);
+    margin: 0;
+    padding: 0;
+}
+.footerson h5{
+   color: rgb(124, 122, 121);
+   padding-top: 13px;
+   font-size: 16px;
+}
+.footerson p{
+    color: rgb(124, 122, 121);
+    padding-top: 10px;
+}
+.designed a{
+    color: #fe980f;
+    transition: 0.2s;
+    padding-top: 10px;
+}
+.designed a:hover{
+    color: #f08a05;
+}
+
+/* footer */
+@media screen and (max-width:1200px){
+    .sira13{
+        display: flex;
+        justify-content: end;
+        margin-bottom: 20px;
+    }
+    .sira12 img{
+        width: 100%;
+        text-align: end;
+    }
+}
+@media screen and (max-width:768px){
+    .sira13 img{
+        width: 100%;
+        height: 200px;
+    }
+}
+/* footer son */
+@media screen and (max-width:768px){
+    .footerson{
+        text-align: center;
+    }
+    .designed{
+       display: block;
+       margin: auto;
+    }
+}
+
+/* Başa dön  */
+.yukaricik{
+    display: none;
+    width: 80px;
+    height: 80px;
+    background-color: #8a8887;
+    color: white;
+    font-weight: 600;   
+    text-decoration: none;
+    transition: 0.5s;
+    border-radius: 50%;
+    line-height: 80px;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+.yukaricik:hover{
+    background-color: #f08a05;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.goster{
+    display: block;
+}

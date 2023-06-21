@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+    <!-- contact -->
+    <div class="container">
+      <div class="row contact">
+        <div class="col-12">
+            <div class="row contactad mt-5">
+                <div class="col-lg-5 col-md-4 col-4">
+                <hr>
+                </div>
+                <div class="col-lg-2 col-md-4 col-4">
+                <h5>CONTACT US</h5>
+                </div>
+                <div class="col-lg-5 col-md-4 col-4">
+                <hr>
+                </div>
+            </div> 
+        </div>
+        <div class="col-12 mt-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d781203.309960954!2d28.461496337429523!3d40.10717810238102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b58f7bddb822a9%3A0x922ca670b54646cd!2sBursa!5e0!3m2!1str!2str!4v1669722579271!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  
+    <!-- iletişim -->
+    <div class="container  mt-5">
+        <div class="row  iletisim">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-3">
+                        <hr>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-6">
+                      <h5>GET IN TOUCH</h5>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-3">
+                        <hr>
+                    </div>
+                </div>  
+                <form class="formiletisim" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" name="name" id="name" placeholder="İsim" required>
+                        </div>
+                        <div class="col-lg-6 ">
+                            <input type="email" name="email" id="gmail" placeholder="E-Posta" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="text" name="title" id="ders" placeholder="Mesaj Konusu..." required>
+                        </div>
+                        <div class="col-12">
+                            <textarea name="text" id="mesaj" placeholder="Mesaj..." required></textarea>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end mb-5">
+                          <input type="submit" class="submit_btn"  name="gonder" value="Kaydet">
+                        </div>
+                      </div>
+                </form>
+                
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-3">
+                        <hr>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6">
+                      <h5>CONTACT INFO</h5>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-3">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row contactinfo">
+                    <div class="col-12">
+                        <p>E-Shopper Inc</p>
+                        <p>935 W. Webster Ave New Streets Chicago, IL 60614, NY</p>
+                        <p>Newyork USA</p>
+                        <p>Mobile: +2346 17 38 93</p>
+                        <p>Fax: 1-714-252-0026</p>
+                        <p>Email: info@e-shopper.com</p>
+                    </div>
+                </div>
+                <div class="row p-4">
+                    <div class="col-md-2 col-sm-3 col-3">
+                        <hr>
+                    </div>
+                    <div class="col-md-8 col-sm-6 col-6">
+                      <h5>SOCIAL NETWORKING</h5>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-3">
+                       <hr>
+                    </div>
+                </div>
+                <div class="row contact_icon">
+                    <div class="col-12">
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Başa dön butonu -->
+    <a class="yukaricik" >Başa Dön</a>
+
+    <script>
+    // başa dön button
+    let yukari = document.getElementsByClassName("yukaricik")[0];
+     window.addEventListener("scroll",function(){
+     let mesafe=window.scrollY;
+    if(mesafe>300){
+    yukari.classList.add("goster")
+    }
+    else{
+     yukari.classList.remove("goster")
+    }
+    });
+
+     yukari.addEventListener("click",function(){
+     window.scrollTo(0,0)
+    });
+    </script>
+
+{% endblock body %}

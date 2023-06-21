@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+     <style>
+      .page-link{
+        background-color: #fe980f !important;
+        color: white;
+        padding: 15px;
+        
+        
+      }
+      .page-link:hover{
+        color: white;
+      }
+     </style>
+{% endblock css %}
+
+{% block body %}
+  
+
+  
+    <!-- slayt -->
+    <div class="container p-0">
+    <div id="carouselExampleIndicators" class="carousel  slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+  
+      <div class="carousel-inner mt-5">
+        <div class="carousel-item active">  
+          <div class="row">
+            <div class=" col-lg-6 col-md-12 d-block">
+             <div class="resyazi1">
+             <h1>E-SHOPPER</h1>
+             <h2 class="mb-3">Free Ecommerce Template</h2>
+             <p>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+             </p>
+             <button class="slaytbtn mt-3">Get it now</button>
+             </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <img src="{% static 'img/girl1.jpg' %}" class="d-block w-75" alt="...">
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-12 ">
+              <div class="resyazi1">
+                <h1>E-SHOPPER</h1>
+                <h2 class="mb-3">Free E-Commerce Template
+                </h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tempora accusamus
+                </p>
+                <button class="slaytbtn mt-3">Get it now</button>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12">
+              <img src="{% static 'img/girl2.jpg' %}" class="d-block w-75" alt="...">
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item ">
+         <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-12 ">
+            <div class="resyazi1">
+              <h1>E-SHOPPER</h1>
+              <h2 class="mb-3">100% Responsive Design</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tempora accusamus.
+              </p>
+              <button class="slaytbtn mt-3">Get it now</button>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-12 ">
+            <img src="{% static 'img/girl3.jpg' %}" class="d-block w-75" alt="...">
+          </div>
+         </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev btnok" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true">
+            <i class="fa fa-angle-left"></i>
+        </span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next btnok" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true">
+            <i class="fa fa-angle-right"></i>
+        </span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    </div>
+
+    <!-- Category -->
+    <div class="container mt-5 mb-5 category">
+      <div class="row genelrow">
+      <div class="col-lg-3">
+          <div class="leftbaslik">
+            <h4>CATEGORY</h4>
+          <div class=" accordion oneri pe-3">
+            <ul class="accordions">
+             
+              <li>
+                <label for="accordion2">CİNSİYET<span>+</span> </label>
+                <input type="radio" name="accordion" id="accordion2">
+                <div class="content">
+                  <ul>
+                    <li>
+                      
+                      {% for i in ganders %}
+                        <a href="{% url 'gander' i.slug %}">{{ i.title }}</a>
+                      {% endfor %}
+                        
+                      
+                      
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <label for="accordion3">ÜRÜN TÜRÜ<span>+</span> </label>
+                <input type="radio" name="accordion" id="accordion3">
+                <div class="content">
+                  <ul>
+                    <li>
+                      {% for i in urun_turu %}
+                        <a href="{% url 'urunTuru' i.slug %}">{{ i.title }}</a>
+                      {% endfor %}
+                    </li>
+                  </ul>
+                </div>
+              </li>
+             
+              <li>
+                <label for="accordion{{ i.id }}">ÜRÜN KATEGİRİSİ<span>+</span> </label>
+                <input type="radio" name="accordion" id="accordion{{ i.id }}">
+                <div class="content">
+                  <ul>
+                    <li>
+                      {% for i in categorys %}
+                      <a href="{% url 'kategory' i.slug %}">{{ i.title }}</a>
+                        
+                      {% endfor %}
+                        
+                    </li>
+                  </ul>
+                </div>
+              </li>
+             
+            </ul>
+            
+            <ul class="accordions">
+                <li>
+                    <div class="kinds">
+                      
+                      
+                    </div>
+                </li>
+              </ul>
+          </div>
+        </div>
+        <div class="row mt-5 mb-5">
+          <img src="{% static 'img/shipping.jpg' %}" alt="resim">
+        </div>
+    </div>
+    <!-- önerilenler -->
+   <div class="col-lg-9 ">
+      <h4 class="righbaslik">ÜRÜNLER</h4>
+      <div class="row">
+         
+         {% for i in products %}
+           <div class="col-lg-4 col-md-4 col-sm-6 mb-2 ">
+          <div class="card cartlarim" style="width: 100%;">
+            <a href="{% url 'detay' i.product.slug %}">
+            <img src="{{ i.product.image.url }}" style="height: 250px; object-fit:contain; cursor:pointer" class="card-img-top mt-2" alt="...">
+            </a>
+            <div class="bilgiler">
+              <h5>{{ i.product.title }}</h5>
+              <div class="yildiz">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <h4>$ {{ i.sizeletter.last.price }}</h4>
+              </div>
+              <a href="#" class="">
+                <i class="fas fa-shopping-cart kart"></i>Ad to cart
+              </a>
+            </div>
+          </div>
+        </div>
+         {% endfor %}
+          
+         <nav aria-label="Page navigation example ">
+          <ul class="pagination justify-content-center mt-3">
+              {% if products.has_previous %}
+              <li class="page-item">
+                  <a class="page-link" href="?page=1" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                  </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="?page={{ products.previous_page_number }}">Geri</a></li>
+              <li class="page-item"><a class="page-link" href="?page={{ products.number|add:'-1' }}">{{ products.number|add:"-1" }}</a></li>
+              {% endif %}
+  
+              <li class="page-item"><a class="page-link" href="?page={{ products.number }}">{{ products.number }}</a></li>
+              
+              {% if products.has_next %}
+              <li class="page-item"><a class="page-link" href="?page={{ products.number|add:'1' }}">{{ products.number|add:"1" }}</a></li>
+              <li class="page-item"><a class="page-link" href="?page={{ products.next_page_number }}">İleri</a></li>
+              <li class="page-item">
+                  <a class="page-link" href="?page={{ products.paginator.num_pages }}" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                  </a>
+              </li>
+              {% endif %}
+          </ul>
+      </nav> 
+       
+       
+         </div>
+        </div>
+       </div>
+      </div>
+
+    <!-- Başa dön butonu -->
+    <a class="yukaricik" >Başa Dön</a>
+
+{% endblock body %}

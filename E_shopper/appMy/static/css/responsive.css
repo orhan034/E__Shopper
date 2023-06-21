@@ -1,0 +1,105 @@
+
+/* navBar_1 */
+@media screen and (max-width:576px){
+    .tel{
+       display: flex !important;
+       align-items: center !important;
+       justify-content: center !important;
+    }
+    .mail{
+       display: flex !important;
+       align-items: center !important;
+       justify-content: center !important;
+    }
+}
+@media screen and (max-width:333px){
+    .tel{
+        display: block !important;
+        text-align: center !important;
+    }
+}
+/* navbar_2 */
+@media screen and (max-width:1200px){
+    .navbar2{
+        width: 100% !important;
+        text-align: center !important;
+        display: flex !important;
+        justify-content: center !important; 
+    }
+    .a{
+        text-align: center !important;
+       
+    }
+}
+@media screen and (max-width:576px){
+    .nav-iki{
+        text-align: center !important;
+        width: 100% !important;
+    }
+    .b{
+      margin: auto !important;
+    }
+    .navbar2ul{
+        margin: auto !important;
+        margin-right: 30px !important;
+    }
+}
+/* NavBar_3 */
+@media screen and (max-width:768px){
+    .dropdownss{
+        display: block !important;
+        margin: auto !important;
+    }
+}
+@media screen and (max-width:576px){
+    .form{
+        display: block !important;
+        margin: auto !important;
+        width: 200px !important;
+    }
+    .c{
+        margin-left: 30px !important;
+    }
+    .navbar3{
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+/* slayt reponsive */
+@media screen and (max-width:992px){
+    .btnok{
+        display: none !important;
+    }
+    .resyazi1{
+        margin: 10px !important;
+        padding: 0 !important;
+    }
+}
+/* footer */
+@media screen and (max-width:1200px){
+    .sira13{
+        display: flex;
+        justify-content: end;
+        margin-bottom: 20px;
+    }
+    .sira12 img{
+        width: 100%;
+        text-align: end;
+    }
+}
+@media screen and (max-width:768px){
+    .sira13 img{
+        width: 100%;
+        height: 200px;
+    }
+}
+/* footer son */
+@media screen and (max-width:768px){
+    .footerson{
+        text-align: center;
+    }
+    .designed{
+       display: block;
+       margin: auto;
+    }
+}

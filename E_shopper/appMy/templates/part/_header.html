@@ -1,0 +1,124 @@
+{% load static %}
+ <!-- navBar_1 -->
+    <div class="navbar-bir">
+        <div class="container p-0">
+            <div class="row telefon">
+                <div class="col-lg-6 col-sm-8 col-12 left">
+                    <ul class="tel">
+                        <li><a href="#"><i class="fa-solid fa-phone"></i>+90 507 08 77</a></li>
+                        <li><a href="#"><i class="fa-sharp fa-solid fa-envelope"></i>orhan@hmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-sm-4 col-12">
+                    <ul class="mail">
+                        <li class="fac"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li class="twit"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li class="linke"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <li class="goog"><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                        <li class="fac"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- navbar_2 -->
+    <div class="navbar-iki pt-3 ">
+        <div class="container p-0">
+           <div class="row nav-iki p-0 m-0">
+            <div class="col-xl-2 col-sm-2 d-block">
+            <a href="{% url 'index' %}">
+            <img src="{% static 'img/logom.png' %}" alt="resim">
+            </a>
+            </div>
+            <div class="col-xl-2 col-sm-10 col-12 d-flex  justify-content-end p-0 mb-2">
+                <div class="b d-flex">
+                    <div class="dropdown dropdowns">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          USA
+                        </a>
+                        <ul class="dropdown-menu dropdown-menue">
+                          <li><a class="dropdown-item" href="#">Canada</a></li>
+                          <li><a class="dropdown-item" href="#">UK</a></li>
+                        </ul>
+                      </div>
+    
+                      <div class="dropdown dropdowns ms-4">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          DOLLAR
+                        </a>
+        
+                        <ul class="dropdown-menu dropdown-menue">
+                          <li><a class="dropdown-item" href="#">Canadian Dollar</a></li>
+                          <li><a class="dropdown-item" href="#">Pound</a></li>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+            <div class="col-xl-8 col-sm-12 accound d-flex">
+                <ul class="d-block navbar2ul ms-auto navbar2 p-0">
+                    <li><a href="#"><i class="fa-sharp fa-solid fa-star"></i>Wishlist</a></li>
+                    <li><a href="#"><i class="fa-solid fa-border-none"></i>Checkout</a></li>
+                    
+                    {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+                    <span class="position-absolute top-10 left-100 translate-middle badge rounden-pill bg-success text-dark">{{ shopbasket|length }}</span>
+                    </li>
+                    <li><a href="{% url 'profil' %}"><i class="fa-solid fa-user"></i>Account</a></li>
+                    {% else %}
+                    <li><a href="{% url 'loginUser' %}"><i class="fa-solid fa-lock"></i>Login</a></li>
+                    {% endif %}
+                        
+                </ul>
+            </div>
+           </div>
+        </div>
+    </div>
+
+    <!--  NavBar_3  -->
+    <div class="navbaruc">
+    <div class="container navbaruccontainer mt-3">
+        <div class="row">
+         <div class="col-sm-9 col-12 c mb-2">
+             <ul class="navbar3 m-0 p-0">
+                 <li class="aktiv"><a  href="{% url 'index' %}">Home</a></li>
+                 <li><a href="#">404</a></li>
+                 <li><a href="{% url 'contact' %}">Contact</a></li>
+                 <li>
+                     <div class="dropdownss">
+                         <a class="btn btn-secondary dropdown-toggle" href="{% url 'account' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Shop
+                         </a>
+                         <ul class="dropdown-menu dropdown-menunav3">
+                           <li><a class="dropdown-item" href="{% url 'account' %}">Products</a></li>
+                           <li><a class="dropdown-item" href="#">Product Details</a></li>
+
+                         </ul>
+                       </div>
+                   </li>
+                  <!-- <li>
+                     <div class="dropdownss">
+                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Blog
+                        </a>
+                       
+                        <ul class="dropdown-menu dropdown-menunav3">
+                           <li><a class="dropdown-item" href="#">Blog List</a></li>
+                           <li><a class="dropdown-item" href="#">Blog Single</a></li>
+                        </ul>
+                    </div>
+                 </li>    -->
+             </ul>
+            </div>
+           <div class="col-sm-3 col-12  d-flex justify-content-end">
+            <form method="GET" action="{% url 'account' %}" class="formssss ms-auto">
+            <button type="submit" style="background: none; border:none;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button> 
+                
+            <input type="text" name="query" placeholder="Search">
+          </form>  
+         </div>
+        </div>
+     </div>
+    </div>

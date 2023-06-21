@@ -1,0 +1,502 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* navbar_1*/
+.navbar-bir{
+    background-color: rgb(236, 236, 214);
+    margin: auto;
+    overflow: hidden;
+}
+.tel{
+    display: flex;   
+}
+.tel i{
+    padding-top: 6px;
+    width: 20px;
+}
+.mail{
+    display: flex;
+    justify-content: end;
+    transition: 0.7s;
+}
+.telefon li{
+    transition: 0.7s;
+    list-style-type: none;
+}
+.telefon ul{
+    margin: 0;
+    padding: 0;
+    transition: 0.7s;
+}
+.telefon li a{
+    display: block;
+    padding: 6px;
+    margin: 0 9px;
+    color: rgb(114, 109, 109);
+    text-decoration:none; 
+}
+.fac:hover{
+    background-color: rgb(69, 71, 71);
+}
+.twit:hover{
+    background-color: rgb(44, 155, 77);
+}
+.linke:hover{
+    background-color: rgb(168, 150, 89);
+}
+.goog:hover{
+    background-color: rgb(90, 47, 139);
+}
+
+/* navbar_2 */
+.btn{
+    background-color: aliceblue;
+    color: #333;
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 10px;
+}
+.btn:hover{
+    background-color: #fe980f;
+}
+.dropdowns .dropdown-menue{
+    background-color: white;
+    color: black;
+}
+.dropdowns .dropdown-menue a{
+    transition: 0.6s;
+}
+.dropdowns .dropdown-menue a:hover{
+    background-color: #f08a05;
+    color: white;
+}
+.dropdowns .dropdown-menue a{
+    color: #333;
+}
+.dropdown-menue a:hover{
+    background-color: #fe980f;
+}
+.accound{
+    margin-top: 10px;
+}
+.accound ul{
+    display: flex;
+}
+.accound li{
+    list-style-type: none;
+    display: inline-block;
+}
+.accound li a{
+    text-decoration: none;
+    color: rgb(122, 115, 115);
+    margin-left: 30px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+.accound li a:hover{
+    color: #fe980f;
+}
+.accound i{
+    width: 20px;
+}
+.active{
+    color: #fe980f;
+}
+.hover a{
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.4s;
+}
+.hover a:hover{
+    color: #fe980f;
+}
+/* NavBar_3 */
+.dropdownss:hover .dropdown-menunav3{ 
+    display: block;
+}
+.navbaruccontainer{
+   overflow: hidden;
+}
+.navbar3{
+    display: flex;
+    list-style-type: none;
+    align-items: center; 
+}
+.navbar3 li{
+    margin-right: 20px;    
+}
+.navbar3 a{
+    text-decoration: none;
+    color: rgb(122, 115, 115);
+    font-size: 20px;
+    transition: 0.5s;
+}
+.navbar3 a:hover{
+    color: #fe980f;
+}
+.aktiv a{
+    color: #fe980f;
+}
+.navbar3 .btn{
+    border: none;
+    background-color: white;
+    color: rgb(122, 115, 115);
+    margin: 0;
+}
+.forms, .formss{
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    background: rgb(236, 236, 214);
+}
+.formss input{
+    display: flex;
+    background: rgb(236, 236, 214);
+    flex: 1;
+    width: 90px;
+    outline: none;
+    border: none;
+}
+form .fa-solid{
+    align-self: center;
+    padding: 5px 10px;
+}
+.dropdown-menu{
+    background-color: rgb(99, 96, 96);
+    border-radius: 0;
+}
+.dropdown-menu a{
+    color: white;
+}
+.dropdown-menu a:hover{
+    background-color: rgb(99, 96, 96);
+}
+
+.reklam{
+    height: 150px;
+    background-color: #fe980f;
+    display: flex;
+    align-items: center;
+}
+.reklam h5{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
+.reklam h1{
+    color: #f08a05;
+    background-color: white;
+    text-align: center;
+}
+.reklam p{
+   display: flex;
+   justify-content: end;
+   width: 40%; 
+   color: white;
+}
+/* Category */ 
+.baslik h4{
+    color: #fe980f;
+    margin-left: 80px;
+    margin-bottom: 30px;
+}
+.baslik{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 100px;
+}
+.accordion{
+    box-shadow: 0 0 3px #fe980f;
+}
+.accordions li{
+    list-style-type: none;
+    border: none;
+}
+.accordions li label{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.accordions li label span{
+    transform: rotate(90deg);
+    font-size: 22px;
+    color: black;
+    font-weight: bold;
+}
+.accordions label + input[type="radio"]{
+    display: none;
+}
+.accordions{
+    margin-bottom: 0;
+}
+.accordions .content{
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.5s;
+}
+.accordions label + input[type="radio"]:checked + .content{
+    max-height: 300px;
+}
+.accordion a{
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+.kinds a{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.oneri{
+    box-shadow: 0 0 3px rgb(155, 150, 139);
+    border: none;
+}
+.leftbaslik h4{
+    color: #fe980f;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.fiyataraligi h4{
+    color: #f08a05;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* önerilerilenler col-9 */
+.righbaslik{
+    color: #fe980f;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.bilgiler{
+    text-align: center;
+}
+.cartlarim{
+    border-radius: 0;
+}
+.bilgiler h5{
+    margin-top: 10px;
+    color: #333;
+}
+.yildiz i{
+    font-size: 15px;
+    color: rgb(243, 181, 25);
+}
+.yildiz h4{
+    display: block;
+    padding-top: 5px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #088178;
+    margin-bottom: 15px;
+}
+.bilgiler .kart{
+    margin-bottom: 20px;
+}
+.bilgiler a{
+    text-decoration: none;
+    padding: 7px 25px;
+    background-color: #fe980f;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 20px;
+    transition: 0.6s;
+}
+.bilgiler a:hover{
+    color: #333;
+}
+.starrenk{
+    color: rgb(243, 181, 25);
+}
+.secimler ul{
+    display: flex;
+    background: #40403e;
+    border-bottom: 1px solid #fe980f;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+}
+.secimler li{
+    list-style-type: none;
+}
+.secimler li a{
+    text-decoration: none;
+    color:#8a8887;
+    border-radius: 0;
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    transition: 0.6s;
+    font-weight: 600;
+}
+.secimler li a:hover{
+    background-color: #f08a05;
+    color: white
+} 
+.aktivnavbar a{
+    background-color: #f08a05;
+    color: white !important ;
+}
+/* slayt */
+.btnok{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+.btnok span i{
+    color: #8a8887;
+    font-size: 50px;
+    transition: 0.6s;
+}
+.btnok span i:hover{
+    color: #fe980f;
+}
+.slytzz {
+    overflow: hidden;
+}
+.slyt{
+    border: 1px solid black;
+    overflow: hidden;
+}
+.genelslyt{
+    overflow: hidden;
+    width: 28%;
+    margin: auto;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+}
+.genelslyt img{
+    width: 100%;
+}
+.slyth1{
+    color: #f08a05;
+    text-align: center;
+}
+
+/* footer */
+.footercapsayici{
+    background-color: rgb(236, 236, 214);
+}
+.sira11 h2{
+    color: rgb(85, 83, 82);
+}
+.sira11 h2::first-letter{
+    color: #fe980f;
+}
+.sira11 p{
+    color: rgb(85, 83, 82);
+    line-height: 15px;
+    font-size: 15px;
+}
+.sira12 p{
+    padding: 0;
+    margin: 0;
+}
+.footerliste h5{
+    color: rgb(124, 122, 121);
+}
+.footerliste ul{
+    list-style-type: none;
+    padding: 0;
+}
+.footerliste li{
+    margin-top: 6px;
+}
+.footerliste a{
+    text-decoration: none;
+    color: rgb(85, 83, 82);
+    transition: 0.6s;
+}
+.footerliste a:hover{
+    color: #fe980f;
+}
+.forms{
+    margin-top: 25px;
+}
+.forms{
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    background: rgb(236, 236, 214);
+}
+.forms input{
+    padding: 6px 20px 5px 6px;
+    border: none;
+    outline: none;
+}
+.forms button{
+    border: none;
+    padding: 5px 8px;
+    background-color: #fe980f;
+    color: white;
+    transition: 0.4s;
+}
+.forms button:hover{
+    color: #fe980f;
+    background-color: rgb(29, 14, 233);
+}
+.formparagraf p{
+    margin-top: 20px;
+    width: 86%;
+}
+/* footer son */
+.footerson{
+    background-color: rgb(199, 199, 189);
+    margin: 0;
+    padding: 0;
+}
+.footerson h5{
+   color: rgb(124, 122, 121);
+   padding-top: 13px;
+   font-size: 16px;
+}
+.footerson p{
+    color: rgb(124, 122, 121);
+    padding-top: 10px;
+}
+.designed a{
+    color: #fe980f;
+    transition: 0.2s;
+    padding-top: 10px;
+}
+.designed a:hover{
+    color: #f08a05;
+}
+
+/* Başa dön  */
+.yukaricik{
+    display: none;
+    width: 80px;
+    height: 80px;
+    background-color: #8a8887;
+    color: white;
+    font-weight: 600;   
+    text-decoration: none;
+    transition: 0.5s;
+    border-radius: 50%;
+    line-height: 80px;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+.yukaricik:hover{
+    background-color: #f08a05;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.goster{
+    display: block;
+}

@@ -1,0 +1,432 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+     <style>
+      .page-link{
+        background-color: #fe980f !important;
+        color: white;
+        padding: 15px;
+        
+        
+      }
+      .page-link:hover{
+        color: white;
+      }
+     </style>
+{% endblock css %}
+
+{% block body %}
+    <!-- reklam -->
+    <div class="container mt-4">
+        <div class="row reklam">
+            <div class="col-5">
+            <h5>Limited Time Offer - Order To Day For</h5>
+            </div>
+            <div class="col-2">
+                <h1>$99</h1>
+            </div>
+            <div class="col-5 d-flex justify-content-end">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+            </div>
+        </div>
+    </div>
+
+      <!-- Category -->
+      <div class="container mt-5 mb-5 category">
+        <div class="row genelrow">
+        <div class="col-lg-3">
+            <div class="leftbaslik">
+              <h4>CATEGORY</h4>
+            <div class=" accordion oneri pe-3">
+              <ul class="accordions">
+               
+                <li>
+                  <label for="accordion2">CİNSİYET<span>+</span> </label>
+                  <input type="radio" name="accordion" id="accordion2">
+                  <div class="content">
+                    <ul>
+                      <li>
+                        
+                        {% for i in ganders %}
+                          <a href="{% url 'gander' i.slug %}">{{ i.title }}</a>
+                        {% endfor %}
+                          
+                        
+                        
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <label for="accordion3">ÜRÜN TÜRÜ<span>+</span> </label>
+                  <input type="radio" name="accordion" id="accordion3">
+                  <div class="content">
+                    <ul>
+                      <li>
+                        {% for i in urun_turu %}
+                          <a href="{% url 'urunTuru' i.slug %}">{{ i.title }}</a>
+                        {% endfor %}
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+               
+                <li>
+                  <label for="accordion{{ i.id }}">ÜRÜN KATEGİRİSİ<span>+</span> </label>
+                  <input type="radio" name="accordion" id="accordion{{ i.id }}">
+                  <div class="content">
+                    <ul>
+                      <li>
+                        {% for i in categorys %}
+                        <a href="{% url 'kategory' i.slug %}">{{ i.title }}</a>
+                          
+                        {% endfor %}
+                          
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+               
+              </ul>
+              
+              <ul class="accordions">
+                  <li>
+                      <div class="kinds">
+                        
+                        
+                      </div>
+                  </li>
+                </ul>
+            </div>
+          </div>
+          <div class="row mt-5 mb-5">
+            <img src="{% static 'img/shipping.jpg' %}" alt="resim">
+          </div>
+      </div>
+      <!-- önerilenler -->
+     <div class="col-lg-9 ">
+        <h4 class="righbaslik">ÜRÜNLER</h4>
+        <div class="row">
+           
+           {% for i in urun %}
+             <div class="col-lg-4 col-md-4 col-sm-6 mb-2 ">
+            <div class="card cartlarim" style="width: 100%;">
+              <a href="{% url 'detay' i.product.slug %}">
+              <img src="{{ i.product.image.url }}" style="height: 250px; object-fit:contain; cursor:pointer" class="card-img-top mt-2" alt="...">
+              </a>
+              <div class="bilgiler">
+                <h5>{{ i.product.title }}</h5>
+                <div class="yildiz">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <h4>$ {{ i.sizeletter.last.price }}</h4>
+                </div>
+                <a href="#" class="">
+                  <i class="fas fa-shopping-cart kart"></i>Ad to cart
+                </a>
+              </div>
+            </div>
+          </div>
+           {% endfor %}
+            
+           <nav aria-label="Page navigation example ">
+            <ul class="pagination justify-content-center mt-3">
+                {% if urun.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="?page={{ urun.previous_page_number }}">Geri</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ urun.number|add:'-1' }}">{{ urun.number|add:"-1" }}</a></li>
+                {% endif %}
+    
+                <li class="page-item"><a class="page-link" href="?page={{ urun.number }}">{{ urun.number }}</a></li>
+                
+                {% if urun.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ urun.number|add:'1' }}">{{ urun.number|add:"1" }}</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ urun.next_page_number }}">İleri</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ urun.paginator.num_pages }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav> 
+         
+         
+           </div>
+          </div>
+         </div>
+        </div>
+
+    <!-- navbar öneriler -->
+    <div class="container">
+        <div class="row secimler">
+            <div class="col">
+              <ul>
+                <li class="aktivnavbar"><a  href="#tshirt" id="ttshirt">T-SHİRT</a></li>
+                <li><a href="#blazers">BLAZERS</a></li>
+                <li><a href="#sunglass">SUNGLASS</a></li>
+                <li><a href="#kids">KİDS</a></li>
+                <li><a href="#polo_shirt">POLO SHİRT</a></li>
+               </ul>
+            </div>
+        </div>
+        <div id="tshirt" class="row mt-3 mb-3 d-flex">
+            <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+                <div class="card cartlarim" style="width: 100%;">
+                    <img src="{% static 'img/gallery1.jpg' %}" class="card-img-top" alt="...">
+                    <div class="bilgiler">
+                      <h5>Easy Polo Black Edition</h5>
+                      <div class="yildiz">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <h4>$50</h4>
+                      </div>
+                      <a href="#" class="">
+                        <i class="fas fa-shopping-cart kart"></i>Ad to cart
+                      </a>
+                    </div>
+                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+                <div class="card cartlarim" style="width: 100%;">
+                    <img src="{% static 'img/gallery2.jpg' %}" class="card-img-top" alt="...">
+                    <div class="bilgiler">
+                      <h5>Easy Polo Black Edition</h5>
+                      <div class="yildiz">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <h4>$50</h4>
+                      </div>
+                      <a href="#" class="">
+                        <i class="fas fa-shopping-cart kart"></i>Ad to cart
+                      </a>
+                    </div>
+                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+                <div class="card cartlarim" style="width: 100%;">
+                    <img src="{% static 'img//gallery3.jpg' %}" class="card-img-top" alt="...">
+                    <div class="bilgiler">
+                      <h5>Easy Polo Black Edition</h5>
+                      <div class="yildiz">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <h4>$50</h4>
+                      </div>
+                      <a href="#" class="">
+                        <i class="fas fa-shopping-cart kart"></i>Ad to cart
+                      </a>
+                    </div>
+                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+                <div class="card cartlarim" style="width: 100%;">
+                    <img src="{% static 'img/gallery4.jpg' %}" class="card-img-top" alt="...">
+                    <div class="bilgiler">
+                      <h5>Easy Polo Black Edition</h5>
+                      <div class="yildiz">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <h4>$50</h4>
+                      </div>
+                      <a href="#" class="">
+                        <i class="fas fa-shopping-cart kart"></i>Ad to cart
+                      </a>
+                    </div>
+                    </div>
+            </div>
+        </div> 
+    </div>
+
+    <!-- slayt -->
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-xl-9 col-lg-12 slytzz m-auto">
+          <div class="row mt-4">
+            <h4 class="slyth1">RECOMMENDED ITEMS</h4>
+            <div class="container p-0">
+              <div id="carouselExampleIndicators" class="carousel  slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+            
+                <div class="carousel-inner ">
+                  <div class="carousel-item active">  
+                    <div class="row ms-auto mt-1">
+                      <div class="col-lg-4 col-sm-12 mb-2 text-center genelslyt">
+                         <img src="{% static 'img/recommend1.jpg' %}"  class="m-auto" alt="resim">
+                        <div class="bilgiler">
+                          <h5>Easy Polo Black Edition</h5>
+                          <div class="yildiz">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star starrenk"></i>
+                            <h4>$64</h4>
+                          </div>
+                          <a href="#" class="">
+                            <i class="fas fa-shopping-cart kart"></i>Ad to cart
+                          </a>
+                       </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-12 mb-2 text-center genelslyt">
+                        <img src="{% static 'img/recommend2.jpg' %}" class="m-auto" alt="resim">
+                        <div class="bilgiler">
+                          <h5>Easy Polo Black Edition</h5>
+                          <div class="yildiz">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star starrenk"></i>
+                            <h4>$64</h4>
+                          </div>
+                          <a href="#" class="">
+                            <i class="fas fa-shopping-cart kart"></i>Ad to cart
+                          </a>
+                       </div>
+                      </div>
+                        <div class="col-lg-4 col-sm-12 mb-2 text-center genelslyt">
+                        <img src="{% static 'img/recommend3.jpg' %}" class="m-auto" alt="resim">
+                        <div class="bilgiler">
+                          <h5>Easy Polo Black Edition</h5>
+                          <div class="yildiz">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star starrenk"></i>
+                            <h4>$64</h4>
+                          </div>
+                          <a href="#" class="">
+                            <i class="fas fa-shopping-cart kart"></i>Ad to cart
+                          </a>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                 
+                  <div class="carousel-item">
+                   <div class="row ms-auto mt-1">
+                    <div class="col-4 text-center mb-2 genelslyt">
+                      <img src="{% static 'img/recommend3.jpg' %}" class="m-auto" alt="resim">
+                        <div class="bilgiler">
+                          <h5>Easy Polo Black Edition</h5>
+                          <div class="yildiz">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star starrenk"></i>
+                            <h4>$64</h4>
+                          </div>
+                          <a href="#" class="">
+                            <i class="fas fa-shopping-cart kart"></i>Ad to cart
+                          </a>
+                       </div>
+                    </div>
+                    <div class="col-4 text-center mb-2 genelslyt">
+                      <img src="{% static 'img/recommend1.jpg' %}" class="m-auto" alt="resim">
+                        <div class="bilgiler">
+                          <h5>Easy Polo Black Edition</h5>
+                          <div class="yildiz">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star starrenk"></i>
+                            <h4>$64</h4>
+                          </div>
+                          <a href="#" class="">
+                            <i class="fas fa-shopping-cart kart"></i>Ad to cart
+                          </a>
+                       </div>
+                    </div>
+                    <div class="col-4 text-center mb-2 genelslyt">
+                      <img src="{% static 'img/recommend2.jpg' %}" class="m-auto" alt="resim">
+                        <div class="bilgiler">
+                          <h5>Easy Polo Black Edition</h5>
+                          <div class="yildiz">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star starrenk"></i>
+                            <h4>$64</h4>
+                          </div>
+                          <a href="#" class="">
+                            <i class="fas fa-shopping-cart kart"></i>Ad to cart
+                          </a>
+                       </div>
+                    </div>
+                   </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev btnok" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true">
+                      <i class="fa fa-angle-left"></i>
+                  </span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next btnok" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true">
+                      <i class="fa fa-angle-right"></i>
+                  </span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ 
+    <!-- Başa dön butonu -->
+    <a class="yukaricik" >Başa Dön</a>
+    <script>
+      // başa dön button
+    let yukari = document.getElementsByClassName("yukaricik")[0];
+    window.addEventListener("scroll",function(){
+    let mesafe=window.scrollY;
+    if(mesafe>300){
+      yukari.classList.add("goster")
+    }
+    else{
+      yukari.classList.remove("goster")
+    }
+    });
+ 
+    yukari.addEventListener("click",function(){
+    window.scrollTo(0,0)
+    });
+    </script>
+
+{% endblock body %}
+  
